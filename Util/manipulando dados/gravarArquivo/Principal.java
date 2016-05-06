@@ -22,12 +22,13 @@ public class Principal {
 			File arquivo = file.getSelectedFile();
 			caminho = arquivo.getPath();
 		}
-		System.out.println(caminho);
 		
 		// GRAVAR NO ARQUIVO.
 		try {
 		
-			FileWriter arq = new FileWriter(caminho);
+			// TIRANDO O "TRUE" DO PARAMETRO, QUANDO GRAVAR NO ARQUIVO, O CONTEÚDO SEMPRE SERÁ SUBSTITUIDO.
+			FileWriter arq = new FileWriter(caminho, true);
+
 			PrintWriter gravarArq = new PrintWriter(arq);
 			
 			gravarArq.printf("Teestando!");
